@@ -1,0 +1,264 @@
+
+  .LLM-EFANT{
+    display: flex;
+    flex-direction:column;
+    /* padding: 10px; */
+    /* height: 100%; */
+    width: 500px;
+    /* max-width: 500px; */
+    margin-right: auto;
+    position: relative;
+    z-index: 40000;
+
+  }
+  
+  .elephant-img {
+    /* padding-left: 100px; */
+    margin-top: auto;
+    /* position: relative; */
+    /* top: 100px; */
+  }
+
+  .warning-area{
+    margin: 10px;
+  }
+
+  .warning{
+    display: flex;
+    flex-direction: column; /* Ensures items stack vertically */
+    text-align: justify; 
+    margin: 21px;
+  }
+
+  .warning div{
+    margin-bottom: 10px;
+  }
+
+  .text-area{
+    border: 1px solid black;
+    /* margin: 20px; */
+    margin-bottom: 0px;
+    max-width: 91%;
+    box-sizing: border-box;
+    /* height: max-content; */
+    flex-grow: 1;
+    /* position: relative; */
+    /* top: 100px; */
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+  }
+
+  .text-area p {
+    margin: 0;
+    display: inline-block;
+  }
+
+  .suggestion-area{
+    position: absolute;
+    bottom: 0;
+    width: 500px;
+    border: 3px solid rgb(104, 74, 36);
+    border-radius: 10px;
+    margin-bottom: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+    /* margin-bottom: 0px; */
+    height: 60px;
+    /* height: max-content; */
+    background-color: rgb(131, 100, 61);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .suggestion-area {
+    display: flex;
+    /* justify-content: space-between; */
+    flex-direction: column;
+    padding: 11px
+
+  }
+
+  .suggestion-prompt{
+    margin: 4px;
+    font-weight: 500;
+    align-self: flex-start;
+    color: rgb(248,236,221);
+  }
+
+  .suggestion-input {
+    display: flex;
+    flex-direction: row;
+    margin: 3px;
+    width: 100%;
+  }
+  
+  input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 2px solid rgb(131, 100, 61);
+    border-radius: 4px;
+    background-color: rgb(248,236,221);
+    color: black;
+    border: 2px solid rgb(104, 74, 36);
+  }
+  
+  .btn {
+    padding: 10px;
+    /* background-color: #007bff; */
+    /* color: #fff; */
+    border: none;
+    border-radius: 4px;
+    margin-left: 10px;
+    height: 35px;
+    width: 47px;
+  }
+
+
+  .suggestion-area button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 30px;
+    padding: 0;
+    cursor: pointer;
+  }
+  
+  .accept-btn {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .reject-btn {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .accept-btn:hover, .reject-btn:hover {
+    opacity: 0.8;
+  }
+
+  .buffer{
+    flex-grow: 1000;
+    /* z-index: -1000; */
+  }
+
+  .bubble {
+    /* talk bubble */
+    /* margin: 40px; */
+    display: inline-block;
+    position: relative;
+    /* width: 200px; */
+    /* height: auto; */
+    flex-shrink: 1000;
+    background-color: rgb(248,236,221);;
+    /* border */
+    border: 5px solid rgb(104, 74, 36);
+    /* roundness*/
+    border-radius: 30px;
+  }
+  
+  /*Right triangle, placed bottom right side slightly in*/
+  .bubble:before {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: auto;
+    left: 25px;
+    bottom: -32px;
+    border: 16px solid;
+    border-color: rgb(104, 74, 36) rgb(104, 74, 36) transparent transparent;
+  }
+  .bubble:after{
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: auto;
+    left: 28px;
+    bottom: -20px;
+    border: 12px solid;
+    border-color: rgb(248,236,221) rgb(248,236,221) transparent transparent;
+  }
+
+  
+/* talk bubble contents */
+.bubble p {
+  /* padding: 1em; */
+	/* text-align: left; */
+  /* line-height: 1.5em; */
+  max-height: 430px;
+  overflow: auto;
+}
+
+.HIDDEN{
+  visibility: hidden;
+  opacity: 0
+}
+
+@keyframes walking-animation {
+  0% {
+    transform: translateX(700px) rotate(0deg);
+  }
+  11% {
+    transform: translateX(600px) rotate(-3deg);
+  }
+  22% {
+    transform: translateX(500px) rotate(3deg);
+  }
+  33% {
+    transform: translateX(400px) rotate(-3deg);
+  }
+  44% {
+    transform: translateX(300px) rotate(0deg);
+  }
+  55% {
+    transform: translateX(250px) rotate(0deg);
+  }
+  66% {
+    transform: translateX(175px) rotate(-3deg);
+  }
+  77% {
+    transform: translateX(75px) rotate(3deg);
+  }
+  88% {
+    transform: translateX(25px) rotate(-3deg);
+  }
+  99% {
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+.walking-container {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.walk {
+  animation: walking-animation 1s cubic-bezier(0, 0, 0, 1.29) ;
+  position: relative;
+}
+
+@keyframes appearing-animation {
+  0% {
+    opacity:0;
+  }
+  99% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+.appear{
+  animation: appearing-animation 1s linear ;
+  position: relative;
+}

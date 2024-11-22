@@ -1,5 +1,29 @@
-.App {
+.App{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   text-align: center;
+  /* background-image: url("/public/background.jpg"); */
+  overflow: hidden;
+}
+
+.background{
+  height: 100vh;
+  width: 100vw;
+  background-image: url("/public/background.jpg");
+  background-size: 100%;
+  position: absolute;
+  z-index: -2;
+}
+
+.content-area{
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .App-logo {
@@ -13,26 +37,48 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+@font-face {
+  font-family: 'giraffe';
+  src: url('/public/Giraffe.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
 }
 
-.App-link {
-  color: #61dafb;
+
+.title{
+  font-family: 'giraffe';
+  font-size: 110px;
+  margin: 0px;
+  padding: 0px;
+  color: #ff5f00;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.statsButtonContainer{
+  padding: 10px;
+  background-image: ("/public/background.jpg");
+  position: absolute;
+  right: 21px;
+  top: 21px;
+}
+
+.statsButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: black;
+  background-color: rgb(248, 236, 221);
+  border: 2px solid rgb(104, 74, 36)
+};
+
+.root{
+  overflow: hidden;
+  height: "100vh";
+}
+
+body{
+  overflow: hidden;
+  height: "100vh";
 }

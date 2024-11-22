@@ -1,0 +1,16 @@
+.dual-chat{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    /* z-index: 1;
+    position: relative; */
+  }
+    
+.dual-chat > div:nth-child(1) {
+  margin-right: 20px;
+}
+
+.dual-chat > div:nth-child(2) {
+  margin-left: 20px;
+}

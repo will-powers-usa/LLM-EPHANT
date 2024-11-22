@@ -1,0 +1,15 @@
+img {
+    animation-duration: 16s; /* Slows down the gif */
+    animation-iteration-count: infinite; /* Keeps the GIF looping */
+    animation-name: none; /* Needed if no CSS animation is used */
+  }
+
+.elephants{
+  position: absolute;
+  top: 25%;
+  opacity: 50%;
+  z-index: -1;
+  height: 40px;
+  width: 100%;
+  overflow: hidden;
+}
